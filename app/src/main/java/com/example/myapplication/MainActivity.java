@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WebView myWebView = (WebView) findViewById(R.id.webview);
         myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.getSettings().setUseWideViewPort(true);
         myWebView.setWebViewClient(new MyWebViewClient());
+        myWebView.setWebChromeClient(new WebChromeClient());
         myWebView.loadUrl("file:///android_asset/index.html");
     }
 }
