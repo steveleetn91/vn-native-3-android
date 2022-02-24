@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         myWebView.getSettings().setUseWideViewPort(true);
         myWebView.setWebViewClient(new MyWebViewClient());
         myWebView.setWebChromeClient(new WebChromeClient());
+        // native
         VnNativeOs vnos = new VnNativeOs(this, getPreferences(Context.MODE_PRIVATE), myWebView);
         myWebView.addJavascriptInterface(vnos, "vnnativeos");
         myWebView.loadUrl("file:///android_asset/index.html");
